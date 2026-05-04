@@ -194,3 +194,15 @@ Conflicting data within a single grid (e.g., simultaneous + and -) is defined as
 ## Korean Documentation
 원어(한국어)로 된 규칙서는 아래 링크에서 확인하실 수 있습니다.
 *   [Korean Specification (README_KR.md)](./README_KR.md)
+
+## 🛠 Tech Stack & Development Roadmap
+We are planning to build a dedicated IDE for MELOG to streamline the data coordination process.
+
+*   **Language:** Python 3.x
+*   **Framework:** `PyQt6` (Currently in the learning & prototyping phase)
+*   **Key Goals:**
+    *   Implementation of a 6-line TAB-based data entry interface.
+    *   Real-time rendering between Linear Mode (text) and Graphical Mode (score).
+    *   Auto-completion features for domain-specific dictionaries.
+
+> **Developer's Note:** I am proficient in general Python programming, but I am currently learning `PyQt` specifically for this project. Suggestions regarding GUI architecture or best practices for PyQt are highly encouraged and appreciated!
