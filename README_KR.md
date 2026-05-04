@@ -191,3 +191,15 @@
 
 ## English Documentation
 *   [English Specification (README.md)](./README.md)
+
+## 🛠 기술 스택 및 개발 계획 (Tech Stack & Development)
+현재 MELOG 전용 통합 개발 환경(IDE) 구축을 위해 다음과 같은 계획을 가지고 있습니다.
+
+*   **언어:** Python 3.x
+*   **프레임워크:** `PyQt6` (현재 학습 및 프로토타이핑 단계)
+*   **목표:** 
+    *   6선 타브 기반의 데이터 입력 인터페이스 구현
+    *   텍스트형(Linear Mode)과 악보형(Graphical Mode)의 실시간 상호 변환 렌더링
+    *   도메인별 사전(Dictionary) 자동 완성 기능
+
+> **Note:** 현재 개발자는 Python을 활용한 기본 프로그래밍이 가능하나, `PyQt` 라이브러리는 새로 학습하며 적용 중인 단계입니다. IDE의 구조 설계나 GUI 구현 방식에 대한 숙련자분들의 조언과 코드 리뷰를 언제나 환영합니다!
