@@ -192,7 +192,7 @@ Conflicting data within a single grid (e.g., simultaneous + and -) is defined as
 | 2 | **i** | Negative / External | Backward Rotation / OFF |
 | 3 | **o** | Repeat / Multiple | High-speed Motion Mode |
 | 4 | **u** | Deep / Fixed | Torque Limit / Collision Warning |
-| 5 | **æ/oi** | Expansion / Modified | Trajectory Offset & Correction |
+| 5 | **oi** | Expansion / Modified | Trajectory Offset & Correction |
 | 6 | **ʌ** | Interior / Auxiliary | Auxiliary Part Operation |
 | 7 | **ɯ** | Horizontal / Pending | Balance Maintenance / Hold Position |
 | 8 | **y** | Focus / Special | Fine Control (Precision Work) |
