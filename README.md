@@ -51,15 +51,18 @@ The Graphical Mode serves as a system log sheet focusing on visual spatiality an
     *   **Dashed line:** Estimated data
     *   **Zigzag line:** Noise or unstable data
 *   **Symbolic Operations:**
-    *   **Tie:** The state value from the previous frame is maintained without change.
-    *   **Slur:** Groups multiple coordinates/frames into a single logical group.
-    *   **Dynamics (f, p):** Data reliability and weight ($f$: strong correlation, $p$: weak variable).
+    *   **Tie:** The state value from the previous frame is maintained without change.(Latching)
+    *   **Slur:** Groups multiple coordinates/frames into a single logical group.(Triggers Smooth Interpolation/Vectoring)
+    *   **Dynamics (f, p):** Data reliability/weight and Sampling Priority ($f$: strong correlation, $p$: weak variable).
     *   **Vibrato (~~~):** Vibration within the Tolerance range.
 
 ### 2.2 Linear Mode
 The Linear Mode converts score coordinates into strings, optimized for AI and data communication.
 
 *   **Coordinate Notation:** `String'Fret` (e.g., `2'1`)
+*   **Flux Operators:** 
+    *   **Vector(/):** A continuous transition (Slur).
+    *   **Pulse(,):** A discrete jump.
 *   **Input/Output Markers:** `^` (Output/Active), `_` (Input/Passive), `|` (Relay/Real-time)
 *   **Word Generation:** `Consonant (String) + Vowel (Fret)` (e.g., `NE`)
 *   **Multi-digit Notation:** Fret numbers following the string number are written continuously without digit limits.
@@ -157,6 +160,12 @@ Use these to compress long numbers:
 ### 4.8 Phonetic Expansion for ID Designation
 Pronunciation rules when designating a specific target on String 2 (T) or String 6 (S):
 *   **Rule:** `String Consonant + ID Fret Vowel + State Fret Vowel`
+
+### 4.9 Data Continuity Logic
+MELOG handles real-time data change by how nodes are connected
+1. Quantized Jump: Place nodes in cells without a connector. The transition is instantaneous at the clock edge.
+2. Continuous Vector: Connect nodes with a Slur(Graphical) or /(Linear). The system performs a smooth ramp between values.
+3. Static Persistence: Connect nodes with a Tie. The value is "latched" and held constant, ignoring new sampling triggers until the tie ends.
 
 ---
 
