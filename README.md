@@ -20,7 +20,7 @@
 *   **Core Objective:** Maximizing non-ambiguity and data compression during the transmission of research and academic data.
 
 ### Guiding Principles
-*   **[Principle 1]** Every word has unique coordinates (TAB), and every relationship is calculated using musical symbols.
+*   **[Principle 1]** Every symbolic unit is anchored to explicit structural coordinates within the TAB framework, and every relationship is calculated using musical symbols.
 *   **[Principle 2]** The **Linear Mode** is for recording thoughts, while the **Graphical Mode** is for sharing insights.
 *   **[Principle 3]** All numbers are automatically interpreted as 'Frets' or 'Numeric Values' based on the defined domain.
 
@@ -40,7 +40,8 @@ MELOG serves as a powerful data interface in domains requiring high precision an
 ### 2.1 Graphical Mode
 The Graphical Mode serves as a system log sheet focusing on visual spatiality and simultaneity.
 
-*   **X-axis (Jeongganbo Grid):** Absolute time clock. Every cell has physically identical horizontal length, representing a fixed unit of time. Coordinates within a single cell are processed in parallel.
+*   **X-axis (Jeongganbo Grid):** Absolute time clock. Every cell has physically identical horizontal length, representing a fixed unit of time. Coordinates within a single cell are processed in parallel. Each grid cell represents a fixed temporal resolution (Δt) defined by the active domain or system configuration.
+All events occurring within the same cell are treated as temporally parallel unless explicitly vector-connected.
 *   **Y-axis (6-line TAB):** Data Domain. Strings 1 through 6 are responsible for fixed data categories.
 *   **Data Node (Rhythmic Number):** Numbers within the grid represent states (frets), and stems control the data flow:
     *   **Up-stem:** Output (Transmission)
@@ -65,7 +66,7 @@ The Linear Mode converts score coordinates into strings, optimized for AI and da
     *   **Pulse(,):** A discrete jump.
 *   **Input/Output Markers:** `^` (Output/Active), `_` (Input/Passive), `|` (Relay/Real-time)
 *   **Word Generation:** `Consonant (String) + Vowel (Fret)` (e.g., `NE`)
-*   **Multi-digit Notation:** Fret numbers following the string number are written continuously without digit limits.
+*   **Multi-digit Notation:** Multi-digit values may be written continuously after the string number. Interpretation depends on the active domain rules and primitive/composite state definitions.
 *   **Unit Declaration:** The base unit for the 3rd string is determined during domain declaration using brackets (e.g., `[kg]`). If a unit change is needed within a sentence, the standard English abbreviation in lowercase is attached directly to the value.
 
 #### 2.2.1 Hierarchical Notation
@@ -73,6 +74,13 @@ The Linear Mode converts score coordinates into strings, optimized for AI and da
 *   **Colon (:):** Designates a unique ID (Joint No., Sensor No.).
 *   **Comma (,):** Collectively designates multiple IDs within the same domain.
 *   **Complex Notation:** When designating both ID and state: `String:ID'State`.
+
+#### Structural Binding Rule
+The colon (`:`) is primarily used for structural binding and hierarchical designation, such as ID association or scoped assignment.
+Semantic operations and logical transformations should preferably use dedicated logical operators instead of overloading the colon symbol.
+
+Linear Mode is semantically equivalent to Graphical Mode, but not necessarily visually lossless.
+Certain graphical properties such as spatial grouping, stem geometry, and visual layering may be implementation-dependent.
 
 ---
 
@@ -129,14 +137,27 @@ The domain must be declared with the highest priority before any data packet or 
 *   `+` / `-` : Increase / Decrease
 *   `!` / `*` : Negation (Halt) / Emphasis (Critical Point)
 *   `?` : Question/Undetermined (`??`: Oscillating error, `~?`: Estimated value)
-*   `~` / `:` : Connection (Belonging) / Value Assignment
-*   `&` / `/` : Simultaneous Occurrence / Selective Parallel
+*   `~` : Connection / Belonging
+*   `&` : Simultaneous Occurrence / Selective Parallel
 *   `->` : Causal Relationship (Slur in score)
 *   `>>` / `<<` : Crescendo (Acceleration) / Decrescendo (Deceleration)
+*   `/` : Continuous Vector / Transition
 
 ### 4.4 Precision Control Notation
 *   `\` : **Fine Calibration** (Used for micro-error correction)
 *   `.` : **Single Pulse Execution** (Executes a discrete data pulse)
+
+### 4.4.1 Operator Binding Priority
+Unless explicitly grouped by domain-specific rules, operators follow the precedence order below. Operators sharing the same precedence level are evaluated from left to right.
+
+1. ! * ?
+2. /
+3. ->
+4. &
+5. + -
+`?` binds to the immediately preceding symbolic unit unless grouped explicitly.
+
+Domain implementations may override precedence only if explicitly declared.
 
 ### 4.5 Numerical Expression & Digit Markers
 Use these to compress long numbers:
@@ -156,6 +177,18 @@ Use these to compress long numbers:
 | 1, 4, 5 | Fret Priority |
 | 2, 6 | ID Priority |
 | 3 | Always interpreted as Physical Value |
+
+String 3 prioritizes numeric decomposition semantics, while other strings prioritize logical fret interpretation unless domain-defined otherwise.
+
+#### Primitive and Composite State Rule
+Frets from 0 to 9 are treated as primitive atomic logical states.
+
+Values above 9 are interpreted as either:
+1. Numeric values, or
+2. Composite state structures,
+
+unless explicitly redefined within a domain specification.
+Composite states should preferably be expressed through relational composition rather than expanding the primitive fret inventory.
 
 ### 4.8 Phonetic Expansion for ID Designation
 Pronunciation rules when designating a specific target on String 2 (T) or String 6 (S):
