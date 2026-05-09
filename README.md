@@ -155,6 +155,7 @@ Unless explicitly grouped by domain-specific rules, operators follow the precede
 3. `->`
 4. `&`
 5. `+ -`
+   
 `?` binds to the immediately preceding symbolic unit unless grouped explicitly.
 
 Domain implementations may override precedence only if explicitly declared.
