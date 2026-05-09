@@ -150,11 +150,11 @@ The domain must be declared with the highest priority before any data packet or 
 ### 4.4.1 Operator Binding Priority
 Unless explicitly grouped by domain-specific rules, operators follow the precedence order below. Operators sharing the same precedence level are evaluated from left to right.
 
-1. ! * ?
-2. /
-3. ->
-4. &
-5. + -
+1. `! * ?`
+2. `/`
+3. `->`
+4. `&`
+5. `+ -`
 `?` binds to the immediately preceding symbolic unit unless grouped explicitly.
 
 Domain implementations may override precedence only if explicitly declared.
