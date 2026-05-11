@@ -4,6 +4,8 @@
 
 ---
 
+![MELOG IDE Layout](./assets/layout.png)
+
 ## 📑 Table of Contents
 1. [Philosophy and Purpose](#1-philosophy-and-purpose)
 2. [System and Symbol Definitions](#2-system-and-symbol-definitions)
