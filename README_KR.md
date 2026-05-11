@@ -4,6 +4,8 @@
 
 ---
 
+![MELOG IDE Layout](./assets/layout.png)
+
 ## 📑 목차 (Table of Contents)
 
 1. [철학 및 목적](#1-철학-및-목적)
