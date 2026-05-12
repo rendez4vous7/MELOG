@@ -4,7 +4,7 @@
 
 ---
  
-![MELOG IDE Layout](./assets/layout.png)
+![MELOG IDE Layout](./assets/LAYOUT.png)
 
 ## 📑 Table of Contents
 1. [Philosophy and Purpose](#1-philosophy-and-purpose)
