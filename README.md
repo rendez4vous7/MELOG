@@ -3,7 +3,7 @@
 **MELOG** is a music-based engineering data language that coordinates the world by converting the 6-line system of guitar TAB tablature into data categories, fret numbers into logical states, and the grid of *Jeongganbo* (traditional Korean notation) into an absolute time axis.
 
 ---
-
+ 
 ![MELOG IDE Layout](./assets/layout.png)
 
 ## 📑 Table of Contents
