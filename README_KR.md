@@ -4,7 +4,7 @@
 
 ---
 
-![MELOG IDE Layout](./assets/layout.png)
+![MELOG IDE Layout](./assets/LAYOUT.png)
 
 ## 📑 목차 (Table of Contents)
 
