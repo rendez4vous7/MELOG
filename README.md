@@ -44,6 +44,7 @@ The Graphical Mode serves as a system log sheet focusing on visual spatiality an
 
 *   **X-axis (Jeongganbo Grid):** Absolute time clock. Every cell has physically identical horizontal length, representing a fixed unit of time. Coordinates within a single cell are processed in parallel. Each grid cell represents a fixed temporal resolution (Δt) defined by the active domain or system configuration.
 All events occurring within the same cell are treated as temporally parallel unless explicitly vector-connected.
+In Linear Mode, adjacent cells may be separated using the Time Cell Delimiter (`;`).
 *   **Y-axis (6-line TAB):** Data Domain. Strings 1 through 6 are responsible for fixed data categories.
 *   **Data Node (Rhythmic Number):** Numbers within the grid represent states (frets), and stems control the data flow:
     *   **Up-stem:** Output (Transmission)
@@ -202,6 +203,19 @@ MELOG handles real-time data change by how nodes are connected
 1. Quantized Jump: Place nodes in cells without a connector. The transition is instantaneous at the clock edge.
 2. Continuous Vector: Connect nodes with a Slur(Graphical) or /(Linear). The system performs a smooth ramp between values.
 3. Static Persistence: Connect nodes with a Tie. The value is "latched" and held constant, ignoring new sampling triggers until the tie ends.
+
+### 4.10 Time Cell Delimiter
+
+In Linear Mode, a semicolon (`;`) separates consecutive Time Cells.
+Each Time Cell corresponds to a single Jeongganbo grid cell in Graphical Mode and represents one discrete temporal frame (Δt).
+
+Example:
+
+1'3 2'2 4'0 ;
+1'4 2'2 4'1 ;
+1'5 2'2 4'1 ||
+
+This sequence contains three consecutive Time Cells followed by sentence termination.
 
 ---
 
